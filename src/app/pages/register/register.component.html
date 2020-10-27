@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="login">
+    <div class="login-triangle"></div>
+
+    <h2 class="login-header">Crear cuenta</h2>
+
+    <form method="POST" #form="ngForm" (ngSubmit)="PostRegister(form)">
+      <p>
+        <input type="text" name="username" id="username" placeholder="UserName" ngModel required>
+      </p>
+      <p>
+        <input type="text" name="email" id="email" placeholder="Correo" ngModel required>
+      </p>
+      <p>
+        <input type="password" name="password" id="password" placeholder="Contraseña" ngModel required>
+      </p>
+      <p>
+        <button type="submit" expand="full" color="secondary">Registrar</button>
+        <button type="submit" expand="full" color="secondary" routerLink="../login" >Login</button>
+      </p>
+    </form>
+  </div>
+</div>

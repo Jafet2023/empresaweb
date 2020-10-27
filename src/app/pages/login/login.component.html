@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+
+<!-- <div class="row">
+  <div class="col-md-4 mx-auto">
+      <div class="card">
+          <div class="card-header">
+              Login o Entrar
+          </div>
+          <div class="card-body">
+              <form (submit)="signIn()">
+                  <div class="form-group">
+                      <input type="text" ngModel="user.identifier" name="identifier" id="identifier"class="form-control" placeholder="Email" required autofocus>
+                  </div>
+                  <div class="form-group">
+                      <input type="password" ngModel="user.password" name="password" id="password" class="form-control" placeholder="Password" required>
+                  </div>
+                  <button class="btn btn-success btn-block">
+                      Entrar
+                  </button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="login">
+    <div class="login-triangle"></div>
+
+    <h2 class="login-header">Login</h2>
+
+    <form method="POST" #form="ngForm" (ngSubmit)="PostLogin(form)">
+      <p>
+        <input type="text" name="identifier" id="identifier" placeholder="Usuario o Correo" ngModel required>
+      </p>
+
+      <p>
+        <input type="password" name="password" id="password" placeholder="Contraseña" ngModel required>
+      </p>
+      <p>
+        <button type="submit" expand="full" color="secondary">Entrar</button>
+        <br>
+        <button type="submit" expand="full" color="secondary" routerLink="../register" >Registrarse</button>
+      </p>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- <div class="container">
+  <div class="card-wrapper">
+      <mat-card class="mat-elevation-z1">
+          <mat-card-header>
+              <mat-card-title>
+                  <h2>Login</h2>
+              </mat-card-title>
+          </mat-card-header>
+          <form [formGroup]="loginForm">
+              <mat-card-content>
+                  <mat-form-field>
+                      <input formControlName="username"
+                             matInput
+                             name="username"
+                             placeholder="Username"
+                             type="text">
+                  </mat-form-field>
+                  <mat-form-field>
+                      <input formControlName="password"
+                             matInput
+                             name="password"
+                             placeholder="Password"
+                             type="password">
+                  </mat-form-field>
+              </mat-card-content>
+              <mat-card-actions>
+                  <button (click)="onLogin($event)"
+                          [disabled]="loginForm.invalid || pending"
+                          color="primary"
+                          mat-raised-button
+                          type="button">Login
+                  </button>
+                  <button (click)="onRegister($event)"
+                          color="primary"
+                          mat-raised-button
+                          type="button">Register
+                  </button>
+              </mat-card-actions>
+          </form>
+          <div *ngIf="error">{{ error }}</div>
+      </mat-card>
+  </div>
+</div> -->

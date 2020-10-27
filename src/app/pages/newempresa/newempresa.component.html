@@ -1,0 +1,116 @@
+<app-navbar></app-navbar>
+
+<!-- <div class="container">
+  <input #fileInput type="file">
+  <button click="onFileUpload">Subir Imagen</button>
+
+</div> -->
+
+<h1>Agregar Empresa</h1>
+<div>
+  <div>
+    <form method="POST" #form="ngForm" (ngSubmit)="PostEmpresa(form)">
+      <p>Nombre: <input type="text" name="nombre" id="nombre" size="40" ngModel></p>
+      <p>Nit: <input type="number" name="nit" id="nit" min="1900" ngModel ></p>
+      <p>Direccion: <input type="text" name="direccion" id="direccion" size="40" ngModel></p>
+      <p>Telefono: <input type="text" name="telefono" id="telefono" min="1900" ngModel></p>
+      <p>Correo: <input type="text" name="correo" id="correo" size="20" ngModel></p>
+
+      <!-- <img src="http://placehold.it/180" id="blah" alt="Img"><br><br>
+    <input type="file" id="inputFile" onchange="readUrl(this)">
+    <button type="button" onclick="removeImg()">Cerrar</button>
+      <br><br>
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Dropdown button
+      </button> -->
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+      <p></p>
+      <button type="submit" expand="full" color="secondary">Registrar</button>
+    </form>
+  </div>
+</div>
+
+
+<!-- <script>
+  var a = document.getElementById("blah");
+    function readUrl(input){
+    if(input.files){
+        var reader = new FileReader();
+        reader.readAsDataURL(input.files[0]);
+        reader.onload=(e)=>{
+            a.src = e.target.result;
+        }
+    }
+    }
+
+    var inputFile = document.getElementById("inputFile");
+    removeImg=()=>{
+      a.src="http://placehold.it/180";
+      inputFile.value="";
+    }
+</script> -->
+
+
+<!--
+<form method="post" id="fRegistro">
+    <p>Nombre: <input type="text" name="nombre" ngModel id="nombre" size="40"></p>
+    <p>Nit: <input type="number" name="nit" min="1900"></p>
+    <p>Direccion: <input type="text" name="direccion" size="40"></p>
+    <p>Telefono: <input type="number" name="telefono" size="40" placeholder="Telefono"></p>
+    <p>Correo: <input type="text" name="correo" size="40"></p>
+    <p>Sexo:
+      <input type="radio" name="hm" value="h"> Hombre
+      <input type="radio" name="hm" value="m"> Mujer
+    </p>
+     <p>
+      Elija un rubro:
+      <select name="menu">
+        <option>Uno</option>
+        <option>Dos</option>
+        <option>Tres</option>
+      </select>
+    </p> -->
+
+    <!-- <div id="autocomplete-container">
+      <input id="autocomplete-input" type="text"
+      class="autocomplete" autocomplete="off" spellcheck="false" dir="auto"
+      placeholder="Location" onfocus="geolocate()">
+    </div> -->
+
+
+    <!-- <button type="submit" expand="full" color="secondary">Registrar</button> -->
+
+    <!-- <button onclick="RegistroEmpresa(fRegistro)" >Enviar</button> -->
+
+<!-- </form>
+
+<script>
+  var autocomplete;
+  function initAutocomplete(){
+      autocomplete = new google.maps.places.Autocomplete(
+      document.getElementById('autocomplete-input'), {types: ['geocode']});
+      autocomplete.addListener('place_changed', getAddressDetails);
+  }
+  function getAddressDetails(){
+      var place = autocomplete.getPlace();
+      window.lat = place.geometry.location.lat();
+      window.long = place.geometry.location.lng();
+  }
+  function geolocate(){
+    if (navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(position){
+        var geolocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+          var circle = new google.maps.Circle(
+          {center: geolocation, radius: position.coords.accuracy});
+          autocomplete.setBounds(circle.getBounds());
+      });
+    }
+  }
+</script> -->

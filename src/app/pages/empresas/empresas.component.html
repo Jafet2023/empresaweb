@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<div class="row" >
+  <div class="col-lg-6" *ngIf="informacion">
+    <h1>Administración de Empresas</h1>
+    <h3>Bienvenido {{informacion.username}}</h3>
+  </div>
+  <div class="col-lg-6">
+    <button class="btn btn-primary" type="button" routerLink="../newempresa">
+      <i class="far fa-trash-alt" >Agregar</i>
+    </button>
+  </div>
+</div>
+
+    <div *ngIf="informacion">
+        <table class="table">
+            <thead>
+              <tr>
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">Nombre</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Rubro</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+              </tr>
+            </thead>
+
+            <tbody *ngIf="informacion">
+              <tr *ngFor="let users of informacion; let i = index" [routerLink]="['/editempresa/', users.id]">
+                <!-- <th scope="row">{{users.id}}</th> -->
+                <td>{{users.nombre}}</td>
+                <td>{{users.direccion}}</td>
+                <td>{{users.telefono}}</td>
+                <td *ngFor="let emp of users.servicios; let i = index">{{emp.nombre}}</td>
+                <td>
+                  <button class="btn btn-success" color="accent" [routerLink]="['/editempresa/', users.id]">
+                      <i class="far fa-trash-alt" [routerLink]="['/editempresa/', users.id]">Editar</i>
+                  </button>
+                </td>
+                <td>
+                  <!-- <button class="btn btn-danger" color="warn" (click)="eliminarEmpresa(users.id)">
+                      <i class="far fa-trash-alt">Eliminar</i>
+                  </button> -->
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+

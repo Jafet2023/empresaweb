@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<h1>Editar Empresa</h1>
+<div>
+  <div *ngIf="information">
+    <form (ngSubmit)="onSubmit()">
+      <label for="name">Nombre</label>
+      <input type="text" class="form-control" id="nombre" required [(ngModel)]="information.nombre" name="nombre">
+      <label for="nit">Nit</label>
+      <input type="number" class="form-control" id="nit" required [(ngModel)]="information.nit" name="nit">
+      <label for="direccion">Direccion</label>
+      <input type="text" class="form-control" id="direccion" required [(ngModel)]="information.direccion" name="direccion">
+      <label for="telefono">Telefono</label>
+      <input type="number" class="form-control" id="telefono" required [(ngModel)]="information.telefono" name="telefono">
+      <label for="correo">Correo</label>
+      <input type="text" class="form-control" id="correo" required [(ngModel)]="information.correo" name="correo">
+      <button type="submit" expand="full" color="secondary">Actualizar</button>
+    </form>
+  </div>
+</div>
